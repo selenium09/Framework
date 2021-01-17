@@ -8,6 +8,7 @@ public class LoginPage 										//here we will store all the locators
 {
 	WebDriver driver;
 	
+	//new commit from Sumit for Github
 	public LoginPage(WebDriver ldriver)  					//first we create a constructor, this will help initialize the webdriver
 	  {														//we need to pass the webdriver as reference, otherwise it wont be able to identify the driver 
 		  this.driver=ldriver;								//ldriver will come from main testcase, whatever driver reference is passed there will be stored in ldriver
