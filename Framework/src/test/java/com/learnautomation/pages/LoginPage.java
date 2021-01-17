@@ -13,9 +13,7 @@ public class LoginPage 										//here we will store all the locators
 	  {														//we need to pass the webdriver as reference, otherwise it wont be able to identify the driver 
 		  this.driver=ldriver;								//ldriver will come from main testcase, whatever driver reference is passed there will be stored in ldriver
 	  }	
-	
-	
-	
+
 	@FindBy(name="email") WebElement uname;
 	
 	@FindBy(name="password") WebElement pass;
@@ -26,9 +24,7 @@ public class LoginPage 										//here we will store all the locators
 	{
 		uname.sendKeys(usernameApplication);
 		pass.sendKeys(passwordApplication);
-		
 		LoginButton.click();
-		
 	}
 	
 	
