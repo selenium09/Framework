@@ -2,7 +2,6 @@ package com.learnautomation.pages;
 
 import java.io.File;
 import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
@@ -10,7 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
-
+import org.testng.annotations.Parameters;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -19,6 +18,7 @@ import com.learnautomation.utility.BrowserFactory;
 import com.learnautomation.utility.ConfigDataProvider;
 import com.learnautomation.utility.ExcelDataProvider;
 import com.learnautomation.utility.Helper;
+
 
 //it will have all the pre condition and post conditions which are required for each and every testcase-copying before and after classes here now
 public class BaseClass 
@@ -49,12 +49,16 @@ public class BaseClass
 	}																									
 	
 	
+	@Parameters({"browser","urlToBeTested"})																			//this variable name should match with xml file
 	@BeforeClass
-	public void setup()
+	public void setup(String browser, String url)
 	{
 		Reporter.log("Trying to start browser and getting application ready", true);
-		driver = BrowserFactory.startApplication(driver,config.getBrowser(),config.getStagingURL());								//web driver reference created as global
-		//System.out.println(driver.getTitle());																					//since this method return webdriver, lets print what it return and assign its value to driver	
+		//driver = BrowserFactory.startApplication(driver,config.getBrowser(),config.getStagingURL());					//web driver reference created as global-we are taking browser from config file
+		
+		driver = BrowserFactory.startApplication(driver,browser,url);								//taking browser input from pom.xml file-but how maven will pass this browser variable to it-so we have annotation called parameters where you can accept no. of parameters such as browser 
+		
+		//System.out.println(driver.getTitle());																		//since this method return webdriver, lets print what it return and assign its value to driver	
 		Reporter.log("Browser and application are up and running", true);
 	}	
 	

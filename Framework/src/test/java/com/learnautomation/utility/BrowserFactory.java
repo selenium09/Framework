@@ -19,7 +19,7 @@ public class BrowserFactory
 			System.setProperty("webdriver.gecko.driver", "./Drivers/geckodriver.exe");					//copied all drivers to drivers folder
 			driver = new FirefoxDriver();			
 		}
-		else if(browserName.equalsIgnoreCase("chrome"))
+		if(browserName.equalsIgnoreCase("chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 			 driver = new ChromeDriver();
