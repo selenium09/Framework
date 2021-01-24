@@ -69,7 +69,7 @@ public class BaseClass
 	}
 	
 	@AfterMethod																			//very helpful when you want to run a piece of code after every testcase e.g i want to run take screenshot even after method is failed
-	public void tearDownMethod(ITestResult result) throws IOException											//if you have 50 tc and you want to run an activity 50 times, keep it under after method 
+	public void tearDownMethod(ITestResult result) throws IOException						//if you have 50 tc and you want to run an activity 50 times, keep it under after method 
 	{																						//Itestresult interface - as soon as your test is complete this result variable will have all the information
 		Reporter.log("Test is about to end", true);
 		

@@ -7,9 +7,6 @@
         <methods>
           <include name="setUpSuite"/>
           <include name="loginApp"/>
-          <include name="tearDownMethod"/>
-          <include name="teardown"/>
-          <include name="setup"/>
         </methods>
       </class> <!-- com.learnautomation.testcases.LoginTestCRM -->
     </classes>
