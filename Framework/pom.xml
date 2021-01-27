@@ -63,14 +63,14 @@
 				<configuration>
 					<!-- make sure property variables come under configuration tags -->
 					<suiteXmlFiles>
-						<suiteXmlFile>XMLFiles/LoginTestCRM.xml</suiteXmlFile>
-						<!-- <suiteXmlFile>XMLFiles/${xmlFiles}</suiteXmlFile> parameterisation 
-							for maven in jenkins -->
+						<!-- <suiteXmlFile>XMLFiles/LoginTestCRM.xml</suiteXmlFile> 		regularized and replaced -->
+						<suiteXmlFile>XMLFiles/${xmlFiles}</suiteXmlFile> 					<!-- parameterisation for maven in jenkins -->
+							
 					</suiteXmlFiles>
 
-					<!-- <systemPropertyVariables> <executionBrowser>${browser}</executionBrowser> 
-						<appURL>${urlToBeTested}</appURL> </systemPropertyVariables> parameterisation 
-						for maven in jenkins -->
+					<systemPropertyVariables> <executionBrowser>${browser}</executionBrowser> 
+						<appURL>${urlToBeTested}</appURL> </systemPropertyVariables> 		<!-- parameterisation for maven in jenkins -->
+						
 
 
 				</configuration>
