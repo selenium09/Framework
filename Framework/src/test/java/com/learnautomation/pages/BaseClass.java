@@ -49,7 +49,7 @@ public class BaseClass
 	}																									
 	
 	
-	@Parameters({"browser","urlToBeTested"})																			//this variable name should match with xml file
+	//@Parameters({"browser","urlToBeTested"})																			//this variable name should match with xml file-for jenkins
 	@BeforeClass
 	public void setup(String browser, String url)
 	{

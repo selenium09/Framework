@@ -51,38 +51,28 @@
 	<build>
 		<plugins>
 
-<!-- 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>${jdk.level}</source>
-					<target>${jdk.level}</target>
-					<suiteXmlFiles>
-						<suiteXmlFile>XMLFiles/LoginTestCRM.xml</suiteXmlFile>
-					</suiteXmlFiles>
-				</configuration>
-			</plugin>
- -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> 
+				<configuration> <source>${jdk.level}</source> <target>${jdk.level}</target> 
+				<suiteXmlFiles> <suiteXmlFile>XMLFiles/LoginTestCRM.xml</suiteXmlFile> </suiteXmlFiles> 
+				</configuration> </plugin> -->
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M5</version>
-				<configuration>				
-				<!-- make sure property variables come under configuration tags -->
+				<configuration>
+					<!-- make sure property variables come under configuration tags -->
 					<suiteXmlFiles>
-						<!-- <suiteXmlFile>XMLFiles/LoginTestCRM.xml</suiteXmlFile>  replaced and regularized -->
-						<suiteXmlFile>XMLFiles/${xmlFiles}</suiteXmlFile>
+						<suiteXmlFile>XMLFiles/LoginTestCRM.xml</suiteXmlFile>
+						<!-- <suiteXmlFile>XMLFiles/${xmlFiles}</suiteXmlFile> parameterisation 
+							for maven in jenkins -->
 					</suiteXmlFiles>
-					
-					<systemPropertyVariables>
-						
-						<executionBrowser>${browser}</executionBrowser>	
-						<appURL>${urlToBeTested}</appURL>
-					
-					</systemPropertyVariables>
-					
-					
+
+					<!-- <systemPropertyVariables> <executionBrowser>${browser}</executionBrowser> 
+						<appURL>${urlToBeTested}</appURL> </systemPropertyVariables> parameterisation 
+						for maven in jenkins -->
+
+
 				</configuration>
 			</plugin>
 
